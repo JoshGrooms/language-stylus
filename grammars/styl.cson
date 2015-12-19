@@ -1,0 +1,266 @@
+'fileTypes': [
+  'styl'
+]
+'name': 'Stylus'
+'scopeName': 'source.stylus'
+'patterns': [
+  {
+    'match': '(/\\*\\*)(.*)(\\*\\*/)\\r?\\n'
+    'captures':
+      '1':
+        'name': 'comment.section.open.stylus'
+      '2':
+        'name': 'comment.section.title.stylus'
+      '3':
+        'name': 'comment.section.close.stylus'
+    'name': 'comment.section.stylus'
+  }
+  {
+    'begin': '(/\\*)\\s*([A-Z0-9_-]+)\\s*(?=\\-)'
+    'beginCaptures':
+      '1':
+        'name': 'comment.documentation.open.stylus'
+      '2':
+        'name': 'comment.documentation.title.stylus'
+    'contentName': 'comment.documentation.content.stylus'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'comment.documentation.close.stylus'
+    'patterns': [
+      {
+        'match': 'SYNTAX'
+        'name': 'comment.documentation.syntax.stylus'
+      }
+      {
+        'match': 'OUTPUT[S]?'
+        'name': 'comment.documentation.output.stylus'
+      }
+      {
+        'match': 'INPUT[S]?'
+        'name': 'comment.documentation.input.stylus'
+      }
+      {
+        'match': 'PROPERTY|PROPERTIES'
+        'name': 'comment.documentation.properties.stylus'
+      }
+    ]
+  }
+  {
+    'begin': '\\s*(/\\*)'
+    'beginCaptures':
+      '1':
+        'name': 'comment.block.open.stylus'
+    'end': '\\*/'
+    'endCaptures':
+      '0':
+        'name': 'comment.block.close.stylus'
+    'contentName': 'comment.block.content.stylus'
+    'name': 'comment.block.stylus'
+  }
+  {
+    'match': '\\s*(//)(.*)\\r?\\n'
+    'captures':
+      '1':
+        'name': 'comment.line.open.stylus'
+      '2':
+        'name': 'comment.line.content.stylus'
+    'name': 'comment.line.stylus'
+  }
+  {
+    'match': '\\s*\\b(else|for|if|return|unless)\\b'
+    'name': 'keyword.control.stylus'
+  }
+  {
+    'match': '\\s*\\b(a|and|defined|extend|extends|in|is|isnt|not)\\b'
+    'name': 'operator.word.stylus'
+  }
+  {
+    'match': '\\b(!important)\\b'
+    'name': 'keyword.qualifier.stylus'
+  }
+  {
+    'match': '^\\s*([\\w\\-]+)\\s*(\\()\\s*(\\))'
+    'captures':
+      '1':
+        'name': 'function.name.stylus'
+      '2':
+        'name': 'enclosure.group.open.stylus'
+      '3':
+        'name': 'enclosure.group.close.stylus'
+  }
+  {
+    'begin': '^([\\w\\-]+)\\s*(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'function.name.stylus'
+      '2':
+        'name': 'enclosure.group.open.stylus'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'enclosure.group.close.stylus'
+    'patterns': [
+      {
+        'begin': '([\\w\\-]+)\\s*(\\=)'
+        'beginCaptures':
+          '1':
+            'name': 'variable.argument.input.stylus'
+          '2':
+            'name': 'operator.character.assignment.stylus'
+        'end': '(?=[\\,\\)])'
+        'patterns': [
+          {
+            'match': '\\b(false|true)\\b'
+            'name': 'literal.boolean.stylus'
+          }
+          {
+            'match': '\\b(black|blue|green|red|transparent|white)\\b'
+            'name': 'literal.color.stylus'
+          }
+          {
+            'match': '\\b\\d+(?:\\.\\d+)?'
+            'name': 'literal.number.stylus'
+          }
+          {
+            'match': '\\,'
+            'name': 'operator.character.separator.stylus'
+          }
+          {
+            'match': '\\b(dark|darker|dashed|faded|inset|light|lighter|none|normal|opaque|outset|semidark|semifaded|semilight|semiopaque|semitransparent|semitranslucent|solid|transparent|translucent)\\b'
+            'name': 'keyword.style.stylus'
+          }
+          {
+            'match': '(?<=\\d)(%|ch|cm|deg|dpi|dpcm|dppx|em|ex|grad|in|mm|ms|pc|pt|px|rad|rem|turn|s|vh|vmin|vw)\\b'
+            'name': 'literal.unit.stylus'
+          }
+          {
+            'match': '[\\w\\-]+'
+            'name': 'variable.name.stylus'
+          }
+        ]
+      }
+      {
+        'match': '[\\w\\-]+'
+        'name': 'variable.argument.input.stylus'
+      }
+    ]
+  }
+  {
+    'match': '\\b(false|true)\\b'
+    'name': 'literal.boolean.stylus'
+  }
+  {
+    'match': '\\b(black|blue|green|red|transparent|white)\\b'
+    'name': 'literal.color.stylus'
+  }
+  {
+    'match': '\\b\\d+(?:\\.\\d+)?'
+    'name': 'literal.number.stylus'
+  }
+  {
+    'match': '\\b(dark|darker|dashed|faded|inset|light|lighter|none|normal|opaque|outset|semidark|semifaded|semilight|semiopaque|semitransparent|semitranslucent|solid|transparent|translucent)\\b'
+    'name': 'keyword.style.stylus'
+  }
+  {
+    'match': '(?<=\\d)(%|ch|cm|deg|dpi|dpcm|dppx|em|ex|grad|in|mm|ms|pc|pt|px|rad|rem|turn|s|vh|vmin|vw)\\b'
+    'name': 'literal.unit.stylus'
+  }
+  {
+    'match': '(?:(?:^\\s+)|(?:(\\{)\\s*))([\\w\\-]+)(\\:)\\s+'
+    'captures':
+      '1':
+        'name': 'enclosure.block.open.stylus'
+      '2':
+        'name': 'property.name.stylus'
+      '3':
+        'name': 'operator.character.property-assignment.stylus'
+  }
+  {
+    'match': '\\s*([\\w\\-]+)\\s*(\\=)'
+    'captures':
+      '1':
+        'name': 'variable.name.stylus'
+      '2':
+        'name': 'operator.character.assignment.stylus'
+  }
+  {
+    'begin': '^\\s*(?:(\\&)\\s*)?(?:(?:(\\.)([\\w\\-]+))|(?:(\\:)([\\w\\-]+))|([\\w+\\-]+))(?!\\:\\s+)'
+    'beginCaptures':
+      '1':
+        'name': 'operator.character.parent.stylus'
+      '2':
+        'name': 'operator.character.selector.stylus'
+      '3':
+        'name': 'type.name.stylus'
+      '4':
+        'name': 'operator.character.selector.stylus'
+      '5':
+        'name': 'type.state.stylus'
+      '6':
+        'name': 'type.name.stylus'
+    'end': '\\n|(?=\\{|\\@)'
+    'patterns': [
+      {
+        'match': '(\\.)([\\w\\-]+)'
+        'captures':
+          '1':
+            'name': 'operator.character.selector.stylus'
+          '2':
+            'name': 'type.name.stylus'
+      }
+      {
+        'match': '([\\w\\-]+)\\s*(?!\\()'
+        'name': 'type.name.stylus'
+      }
+      {
+        'match': '(\\:)([\\w\\-]+)'
+        'captures':
+          '1':
+            'name': 'operator.character.selector.stylus'
+          '2':
+            'name': 'type.state.stylus'
+      }
+      {
+        'match': '\\&'
+        'name': 'operator.character.parent.stylus'
+      }
+      {
+        'match': '\\>'
+        'name': 'operator.character.descendent.stylus'
+      }
+      {
+        'match': '\\,'
+        'name': 'operator.character.separator.stylus'
+      }
+    ]
+  }
+  {
+    'match': '(\\,|\\;|\\?|\\~|\\.|\\:|\\:\\=|\\^|\\^\\=|\\%|\\%\\=|\\=|\\=\\=|\\!|\\!\\=|\\*|\\*\\=|/|/\\=|\\>|\\>\\=|\\<|\\<\\=|\\&|\\&\\=|\\&\\&|\\||\\|\\=|\\|\\||\\+|\\+\\=|\\+\\+|\\-|\\-\\=|\\-\\-)'
+    'name': 'operator.character.stylus'
+  }
+  {
+    'match': '\\['
+    'name': 'enclosure.index.open.cpp.stylus'
+  }
+  {
+    'match': '\\]'
+    'name': 'enclosure.index.close.cpp.stylus'
+  }
+  {
+    'match': '\\('
+    'name': 'enclosure.group.open.cpp.stylus'
+  }
+  {
+    'match': '\\)'
+    'name': 'enclosure.group.close.cpp.stylus'
+  }
+  {
+    'match': '\\{'
+    'name': 'enclosure.block.open.cpp.stylus'
+  }
+  {
+    'match': '\\}'
+    'name': 'enclosure.block.close.cpp.stylus'
+  }
+]
