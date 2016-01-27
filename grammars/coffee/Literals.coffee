@@ -4,93 +4,35 @@
 
 { Patterns } = require('./Utilities');
 
-# DEBLANK - Removes all whitespace from a string.
-String::deblank = ->
-    return @replace(/(\s*|\r|\n)/gm, '');
+emptyStrings =
+    match: /([\'\"])([\'\"])/;
+    captures:
+        1: name: 'enclosure.string.open.stylus';
+        2: name: 'enclosure.string.close.stylus';
 
 
-booleans =
-    match: /\b(false|true)\b/;
-    name: 'literal.boolean.stylus';
+stringDouble =
+    match: /(\")(.*)(\")/
+    captures:
+        1: name: 'enclosure.string.open.stylus'
+        2: name: 'literal.string.content.stylus'
+        3: name: 'enclosure.string.close.stylus'
 
-colors =
-    match:
-        ///\b(
-            black           |
-            blue            |
-            green           |
-            red             |
-            transparent     |
-            white
-        )\b///;
-    name: 'literal.color.stylus';
-
-numbers =
-    match:
-        ///
-            \d+
-        ///;
-    name: 'literal.number.stylus';
-
-units =
-    match:
-        '''
-            (?<= \\d )
-            (
-                %       |
-                ch      |
-                cm      |
-                deg     |
-                dpi     |
-                dpcm    |
-                dppx    |
-                em      |
-                ex      |
-                grad    |
-                in      |
-                mm      |
-                ms      |
-                pc      |
-                pt      |
-                px      |
-                rad     |
-                rem     |
-                turn    |
-                s       |
-                vh      |
-                vmin    |
-                vw
-            )\\b
-        '''.deblank();
-    name: 'literal.unit.stylus';
-
-
-styles =
-    match:
-        ///\b(
-            dark                |
-            darker              |
-            inset               |
-            light               |
-            lighter             |
-            normal              |
-            opaque              |
-            outset              |
-            semidark            |
-            semilight           |
-            semitransparent     |
-            semitranslucent     |
-            transparent         |
-            translucent
-        )\b///;
-    name: 'literal.style.stylus';
-
-
+stringSingle =
+    match: /(\')(.*)(\')/
+    captures:
+        1: name: 'enclosure.string.open.stylus'
+        2: name: 'literal.string.content.stylus'
+        3: name: 'enclosure.string.close.stylus'
 
 module.exports =
     [
+        stringDouble,
+        stringSingle,
+
         Patterns.Booleans,
         Patterns.Colors,
+        Patterns.Hexadecimals,
         Patterns.Numbers,
         Patterns.Styles,
         Patterns.Units,
