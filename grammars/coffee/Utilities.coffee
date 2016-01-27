@@ -28,6 +28,10 @@ Patterns =
             )\b///;
         name: 'literal.color.stylus';
 
+    Hexadecimals:
+        match: /\#[0-9a-fA-f]+/;
+        name: 'literal.number.hexadecimal.stylus';
+
     Numbers:
         match:
             ///\b
