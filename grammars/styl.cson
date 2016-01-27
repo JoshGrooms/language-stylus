@@ -147,12 +147,36 @@
     ]
   }
   {
+    'match': '(\\")(.*)(\\")'
+    'captures':
+      '1':
+        'name': 'enclosure.string.open.stylus'
+      '2':
+        'name': 'literal.string.content.stylus'
+      '3':
+        'name': 'enclosure.string.close.stylus'
+  }
+  {
+    'match': '(\\\')(.*)(\\\')'
+    'captures':
+      '1':
+        'name': 'enclosure.string.open.stylus'
+      '2':
+        'name': 'literal.string.content.stylus'
+      '3':
+        'name': 'enclosure.string.close.stylus'
+  }
+  {
     'match': '\\b(false|true)\\b'
     'name': 'literal.boolean.stylus'
   }
   {
     'match': '\\b(black|blue|green|red|transparent|white)\\b'
     'name': 'literal.color.stylus'
+  }
+  {
+    'match': '\\#[0-9a-fA-f]+'
+    'name': 'literal.number.hexadecimal.stylus'
   }
   {
     'match': '\\b\\d+(?:\\.\\d+)?'
