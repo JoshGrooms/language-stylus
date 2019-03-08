@@ -11,7 +11,6 @@ String::deblank = ->
 
 Patterns =
 
-
     Booleans:
         match: /\b(false|true)\b/;
         name: 'literal.boolean.stylus';
@@ -28,8 +27,27 @@ Patterns =
             )\b///;
         name: 'literal.color.stylus';
 
+    Enumerators:
+        match:
+            ///\b(
+                dark                |
+                darker              |
+                light               |
+                lighter             |
+                faded               |
+                opaque              |
+                semidark            |
+                semifaded           |
+                semilight           |
+                semiopaque          |
+                semitransparent     |
+                semitranslucent     |
+                translucent
+            )\b///;
+        name: 'type.enumeration.stylus';
+
     Hexadecimals:
-        match: /\#[0-9a-fA-f]+/;
+        match: /(\#[0-9a-fA-F]+)\b/;
         name: 'literal.number.hexadecimal.stylus';
 
     Numbers:
@@ -46,26 +64,32 @@ Patterns =
     Styles:
         match:
             ///\b(
-                dark                |
-                darker              |
+                auto                |
+                bold                |
+                border-box          |
+                content-box         |
                 dashed              |
-                faded               |
+                dotted              |
+                double              |
+                fill                |
+                groove              |
+                hidden              |
+                important           |
+                inherit             |
+                initial             |
                 inset               |
-                light               |
-                lighter             |
                 none                |
                 normal              |
-                opaque              |
                 outset              |
-                semidark            |
-                semifaded           |
-                semilight           |
-                semiopaque          |
-                semitransparent     |
-                semitranslucent     |
+                padding-box         |
+                repeat              |
+                ridge               |
+                round               |
                 solid               |
+                space               |
+                stretch             |
                 transparent         |
-                translucent
+                underline
             )\b///;
         name: 'keyword.style.stylus';
 

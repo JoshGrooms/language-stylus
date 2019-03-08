@@ -32,6 +32,7 @@ module.exports =
 
         Patterns.Booleans,
         Patterns.Colors,
+        Patterns.Enumerators,
         Patterns.Hexadecimals,
         Patterns.Numbers,
         Patterns.Styles,
