@@ -27,7 +27,7 @@ keywordOperators =
             isnt    |
             not
         )\b///;
-    name: 'operator.word.stylus';
+    name: 'keyword.operator.stylus';
 
 keywordQualifiers =
     match:

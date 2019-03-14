@@ -31,27 +31,27 @@ enclosures =
     [
         {
             match: /\[/;
-            name: 'enclosure.index.open.cpp';
+            name: 'enclosure.index.open.stylus';
         }
         {
             match: /\]/;
-            name: 'enclosure.index.close.cpp';
+            name: 'enclosure.index.close.stylus';
         }
         {
             match: /\(/;
-            name: 'enclosure.group.open.cpp';
+            name: 'enclosure.group.open.stylus';
         }
         {
             match: /\)/;
-            name: 'enclosure.group.close.cpp';
+            name: 'enclosure.group.close.stylus';
         }
         {
             match: /\{/;
-            name: 'enclosure.block.open.cpp';
+            name: 'enclosure.block.open.stylus';
         }
         {
             match: /\}/;
-            name: 'enclosure.block.close.cpp';
+            name: 'enclosure.block.close.stylus';
         }
     ];
 

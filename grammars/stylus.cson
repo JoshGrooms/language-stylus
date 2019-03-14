@@ -73,7 +73,7 @@
   }
   {
     'match': '\\s*\\b(a|and|defined|extend|extends|in|is|isnt|not)\\b'
-    'name': 'operator.word.stylus'
+    'name': 'keyword.operator.stylus'
   }
   {
     'match': '\\b(!important)\\b'
@@ -269,26 +269,26 @@
   }
   {
     'match': '\\['
-    'name': 'enclosure.index.open.cpp.stylus'
+    'name': 'enclosure.index.open.stylus'
   }
   {
     'match': '\\]'
-    'name': 'enclosure.index.close.cpp.stylus'
+    'name': 'enclosure.index.close.stylus'
   }
   {
     'match': '\\('
-    'name': 'enclosure.group.open.cpp.stylus'
+    'name': 'enclosure.group.open.stylus'
   }
   {
     'match': '\\)'
-    'name': 'enclosure.group.close.cpp.stylus'
+    'name': 'enclosure.group.close.stylus'
   }
   {
     'match': '\\{'
-    'name': 'enclosure.block.open.cpp.stylus'
+    'name': 'enclosure.block.open.stylus'
   }
   {
     'match': '\\}'
-    'name': 'enclosure.block.close.cpp.stylus'
+    'name': 'enclosure.block.close.stylus'
   }
 ]
